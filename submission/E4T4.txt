@@ -1,0 +1,14 @@
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+- Place Web Service Instance into private subnet
+- Make Web Service Instance to connect to S3 bucket via private VPC endpoints.
+- Add WAF to filter/block undesirable traffic from the Internet.
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+Creating private VPC endpoints for the S3 would prevent the unauthorized access to the secrets bucket only if that bucket would be additionaly properly hardened.
+And do allow access to it via these private VPC endpoints only from specific private IP address, private CIDR range or from the secure and trusted sources.
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+No. The existing objects won't be encrypted. but, new objects will be encypted as well.
+
+# What would happen if the original cloud formation templates are applied to this environment.
+All the changes would be overridden. The EC2 instances, Security Groups, S3 buckets will be reverted to initial state.

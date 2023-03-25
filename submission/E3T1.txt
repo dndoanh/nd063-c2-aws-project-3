@@ -1,0 +1,7 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+There were 2 item of findings from GuardDuty as under UnauthorizedAccess:EC2/SSHBruteForce type:
+Attacker (10.192.11.207) is performing SSH brute force attacks against i-099941747ed66f93a / victim (10.192.10.85) (Web Service Instance - C3). 
+Brute force attacks are used to gain unauthorized access to your instance by guessing the SSH password.
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+AWS Guard Duty has collected the data about the brute force attacks from the VPC Flow Logs which were collected and stored into the "S3BucketVPCFlowLogs" S3 bucket (cand-c3-vpc-flow-logs-563060295568). 

@@ -1,0 +1,8 @@
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+- Disable SSH password login on Web Service Instance - C3. Use private key authentication instead
+- Restrict internet access only to specific IP address ranges. Place Web Service Instance in private subnet.
+
+# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+- Use least privilege access as needs: modify c3-app-InstanceRole IAM role to grant access only to the free recipes bucket
+- Use default server-side encryption for S3 bucket using AWS managed key (SSE-S3)
+- Use Customer Master Keys (CMKs) stored in the AWS Key Management Service (AWS KMS) for server-side encryption for S3 bucket

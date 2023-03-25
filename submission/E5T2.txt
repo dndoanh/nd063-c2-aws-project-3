@@ -1,0 +1,23 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+- Regula - https://github.com/fugue/regula
+- Terrascan - https://github.com/accurics/terrascan
+
+### Example vulnerability
+- Hard coding password, secrets or access token
+- Do not performing sanity and security checks before or after deployment
+
+##Scan AMI's or containers for OS vulnerabilities
+- AWS Inspector
+- Anchore (open-source) - https://anchore.com/
+
+### Example vulnerability
+- Posibility to log into root account over SSH (port 22)
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+- AWS Config
+
+### Example vulnerability
+- IAM mistake by granted admin rights to unexpected people
+- Misconfigured S3 buckets
